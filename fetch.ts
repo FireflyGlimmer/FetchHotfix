@@ -95,7 +95,7 @@ async function main() {
     const Branch = readString(buffer_BinaryVersion, 1);
     const Revision = readUint24BE(buffersplits[0]);
     const Time = readString(buffersplits[1]);
-    const { version: versionStr, seed: seedStr } = getDispatchSeed(buffersplits, `${Time}-${Branch}-${Revision}`) || {};
+    const { version: versionStr, seed: seedStr } = getDispatchSeed(buffersplits, `${Time}-${Branch}`) || {};
     
     if (versionStr == null || seedStr == null) {
         console.log(`Unable to parse dispatch seed for this game version, please ensure you entered the correct game path and try again.`);
